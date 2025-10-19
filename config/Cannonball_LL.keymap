@@ -56,11 +56,11 @@
       bindings = <
         // Order when USB is on top
         // Keys (Upper-right to Lower-left)
-        &kp K_PLAY_PAUSE      &kp C_NEXT   &kp C_PREV    &kp C_VOL_UP
-        &kp C_FAST_FORWARD    &mo SCROLL  &kp LC(N0)   &kp K_VOLUME_UP
-        &kp C_FAST_FORWARD    &kp TAB     &kp LS(TAB)  &kp C_REWIND
+        &kp K_PLAY_PAUSE      &kp C_NEXT     &kp C_PREV     &kp C_VOL_UP
+        &kp C_FAST_FORWARD    &mo SCROLL     &kp LC(N0)     &kp C_VOL_UP    // ← K_VOLUME_UP2 を C_VOL_UP に
+        &kp C_FAST_FORWARD    &kp TAB        &kp LS(TAB)    &kp C_REWIND
         // Mouse (Left, Right)
-        &kp C_VOL_DN  &kp K_VOLUME_UP2
+        &kp C_VOL_DN          &kp C_VOL_UP
         // Stick (Up, Left, Down, Right)
         &kp LS(LC(T)) &kp LS(LC(TAB)) &kp LC(W) &kp LC(TAB)
         // Lever (Left-side-left to Right-side-right)
@@ -73,16 +73,16 @@
       >;
 
       // Encoder ( Upper CCW/CW, Middle Up/Down, Left Up/Down )
-      sensor-bindings = <&rot_kp LG(Z) LS(LG(Z))>, <&scroll_move_y>, <&rot_kp LG(PLUS) LG(MINUS)>;
-      // ※ Win専用運用なら上の LG(PLUS/MINUS) を LC(PLUS/MINUS) に変えるのもアリ
+      // Win運用向けに Ctrl+Z / Shift+Ctrl+Z（Undo/Redo）
+      sensor-bindings = <&rot_kp LC(Z) LS(LC(Z))>, <&scroll_move_y>, <&rot_kp LC(PLUS) LC(MINUS)>;
     };
 
-    /* スクロール／BTユーティリティ層（旧：SETTINGS） */
+    /* スクロール／BTユーティリティ層 */
     SCROLL {
       bindings = <
         // Key
         &none &none &none &none
-        &none &none &none &none    // ← 自己参照(&mo SCROLL)は削除
+        &none &none &none &none
         &none &none &none &none
         // Mouse
         &none &none
