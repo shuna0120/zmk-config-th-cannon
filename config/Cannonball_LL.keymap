@@ -81,7 +81,7 @@
                 // Keys (Upper-right to Lower-left)
                 &kp A    &kp A               &kp A     &kp A
                 &kp A    &kp C_PLAY_PAUSE    &kp A     &kp A
-                &kp A    &kp A               &mt rec_key B    &pin_login 
+                &kp A    &kp A               &rec_key    &pin_login 
 
                 // Mouse (Left, Right)
                 &mkp LCLK          &mkp RCLK
