@@ -49,7 +49,32 @@
             // tap-ms下限メモ Xの値で可変: X(15) <81>, X(20) <65>, X(25) <49>
             tap-ms = <65>;
         };
+
+        ht_pin: hold_tap {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          tapping-term-ms = <300>;   // 長押し判定時間（250〜350msが多い）
+          flavor = "tap-preferred";  // 誤爆しにくいタップ優先
+        };
     };
+
+    /* マクロ用 */
+    macros {
+      pin_login: pin_login {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>; tap-ms = <40>;
+        bindings = <&kp N9 &kp N8 &kp N7 &kp N7>;
+      };
+
+      rec_key: rec_key {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>; tap-ms = <40>;
+        bindings = <&kp N0 &kp N3 &kp N0 &kp N8 &kp N9 &kp N9 &kp N0 &kp N4 &kp N1 &kp N0 &kp N1 &kp N9 &kp N5 &kp N7 &kp N3 &kp N9 &kp N4 &kp N7 &kp N0 &kp N2 &kp N3 &kp N0 &kp N6 &kp N7 &kp N3 &kp N1 &kp N3 &kp N9 &kp N9 &kp N5 &kp N4 &kp N9 &kp N2 &kp N0 &kp N1 &kp N9 &kp N2 &kp N4 &kp N7 &kp N0 &kp N4 &kp N9 &kp N0 &kp N2 &kp N1 &kp N2 &kp N7 &kp N4>;
+      };
+    };
+  };
 
     /* キーマップ */
     keymap {
@@ -62,10 +87,10 @@
                 // Keys (Upper-right to Lower-left)
                 &kp A    &kp A               &kp A     &kp A
                 &kp A    &kp C_PLAY_PAUSE    &kp A     &kp A
-                &kp A    &kp A               &kp A     &kp A
+                &kp A    &kp A               &ht_pin &rec_key &kp F4     &ht_pin &pin_login &kp B
                 
                 // Mouse (Left, Right)
-                &kp LCLK          &kp RCLK
+                &mkp LCLK          &mkp RCLK
                 
                 // Stick (Up, Left, Down, Right)
                 &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mmv MOVE_UP
