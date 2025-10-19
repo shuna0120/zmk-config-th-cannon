@@ -60,21 +60,21 @@
             bindings = <
                 // Order when USB is on top
                 // Keys (Upper-right to Lower-left)
-                &mkp MB2   &kp LCTRL   &kp LSHFT    &kp BSPC
-                &mkp MB3   &mo SCROLL &kp LC(N0)   &kp DEL
-                &mkp MB1   &kp TAB    &kp LS(TAB)  &kp RET
+                &kp K_PLAY_PAUSE      &kp C_NEXT     &kp C_PREV     &kp C_VOL_UP
+                &kp C_FAST_FORWARD    &mo SCROLL     &kp LC(N0)     &kp C_VOL_UP    // ← K_VOLUME_UP2 を C_VOL_UP に
+                &kp C_FAST_FORWARD    &kp TAB        &kp LS(TAB)    &kp C_REWIND
                 // Mouse (Left, Right)
-                &kp LC(C) &kp LC(V)
+                &kp C_VOL_DN          &kp C_VOL_UP
                 // Stick (Up, Left, Down, Right)
                 &kp LS(LC(T)) &kp LS(LC(TAB)) &kp LC(W) &kp LC(TAB)
                 // Lever (Left-side-left to Right-side-right)
-                &to DEFAULT_WIN &kp F11 &to DEFAULT_MAC
-                &to DEFAULT_WIN &kp F12 &to DEFAULT_MAC
+                &to DEFAULT_WIN &kp F11 &to DEFAULT_WIN
+                &to DEFAULT_WIN &kp F12 &to DEFAULT_WIN
                 // Side (Upper-left, Lower-left, Upper-right, Lower-right)
-                &kp F1 &kp F2 &kp F3 &kp F4
+                &kp C_MUTE &kp K_MUTE &kp F3 &kp F4
                 // Back (Upper, Lower)
                 &bt BT_SEL 0 &bt BT_SEL 1
-    	    >;
+              >;
             sensor-bindings = <&rot_kp LG(Z) LS(LG(Z))>, <&scroll_move_y>, <&rot_kp LG(PLUS) LG(MINUS)>;
     	};
 
