@@ -50,12 +50,7 @@
             tap-ms = <65>;
         };
 
-        ht_pin: hold_tap {
-          compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <2>;
-          tapping-term-ms = <300>;   // 長押し判定時間（250〜350msが多い）
-          flavor = "tap-preferred";  // 誤爆しにくいタップ優先
-        };
+
     };
 
     /* マクロ用 */
