@@ -9,7 +9,7 @@ if CANNONBALL_LL
     config SPI
         default y
 
-    config PMW3610
+    config PMW3610_ALT
         default y
 
     config INPUT

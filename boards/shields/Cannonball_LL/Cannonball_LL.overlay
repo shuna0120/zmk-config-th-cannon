@@ -194,7 +194,7 @@
     // 光学センサー
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3610";
+        compatible = "pixart,pmw3610-alt";
         reg = <0>;
   	    cpi = <1200>;
         spi-max-frequency = <400000>;
