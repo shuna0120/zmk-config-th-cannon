@@ -16,6 +16,7 @@ manifest:
       revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
+      # ZMK v0.2.1 で動く最後の版（2026-02-17 以降の main は v0.3 専用）
+      revision: e9472d6c59b8e901753dfa6c337c1b24cb70f571
   self:
     path: config
